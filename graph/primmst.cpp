@@ -25,12 +25,11 @@ void primMST(){
 		auto top = *minq.begin();
 		minq.erase(minq.begin());
 		int from = top.second;
-		marked[from]=true;
+		marked[from]=true;		
 		for(auto& edge: adj[from]){
 			int to = edge.to;
 			int weight = edge.weight;
-			//cout << to << " " << weight << "\n";
-			if(marked[to]) continue;
+			if(marked[to]) continue;			
 			if(weight < disto[to]){
 				if(disto[to]!=900000000) minq.erase(minq.find({disto[to],to}));
 				disto[to] = weight;
@@ -67,7 +66,7 @@ int main(){
     addEdge(6, 0, 58);
 	primMST();
     for(int i=1;i<v;i++){
-    	cout << edgeto[i].from << "  to " << edgeto[i].to  << " w " << edgeto[i].weight << "\n";
+    	//cout << edgeto[i].from << "  to " << edgeto[i].to  << " w " << edgeto[i].weight << "\n";
     }
 	return 0;
 }

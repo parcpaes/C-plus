@@ -7,11 +7,11 @@ vector<int> adj[1002];
 int ranks[1002];
 void dfs(int s){
 	visited[s] = true;	
-	for(int i=0;i<adj[s].size(); i++){		
+	for(int i=0;i<adj[s].size(); i++){	
 		if(!visited[adj[s][i]]){			
 			ranks[adj[s][i]] = ranks[s]+1;
 			dfs(adj[s][i]);
-		}
+		}	
 	}
 }
 

@@ -19,8 +19,7 @@ vector<int> disto(1000,900000000);
 void dijkstra(int start){
 	disto[start]=0;
 	priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> minq;
-	minq.push(make_pair(disto[start],start));
-	int x=0;
+	minq.push(make_pair(disto[start],start));	
 	while(!minq.empty()){
 		auto top = minq.top();
 		minq.pop();
